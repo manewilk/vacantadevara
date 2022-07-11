@@ -1,4 +1,4 @@
-from methods import diagonala1, diagonala2, winner, col_matrix
+from methods import diagonala, winner, col_matrix
 from random import randint
 
 game = [[0, 0, 0],
@@ -28,13 +28,13 @@ while win == 0:
     """
     Verific winner pe diagonala
     """
-    d1 = diagonala1(game)
+    d1 = diagonala(game,1)
     win = winner(d1)
     if win > 0:
         print(f"Winner {win} on diagonal 1")
         break
 
-    d2 = diagonala2(game)
+    d2 = diagonala(game,2)
     win = winner(d2)
     if win > 0:
         print(f"Winner {win} on diagonal 2")

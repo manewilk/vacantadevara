@@ -36,7 +36,23 @@ def col_matrix(matrix, col_nr):
           x.append(row[col_nr])
      return x
 
+def diagonala(game,x):
+    if x == 1:
+        diagonala = []
+        for element in range(0, len(game)):
+            diagonala.append(game[len(game)-1-element][element])
+        return diagonala
 
+    elif x == 2:
+        diagonala = []
+        for element in range(0, len(game)):
+            diagonala.append(game[element][element])
+        return diagonala
+
+    else:
+        return None
+
+    
 # game = [[2, 0, 1],
 #         [0, 2, 0],
 #         [1, 0, 2]]
