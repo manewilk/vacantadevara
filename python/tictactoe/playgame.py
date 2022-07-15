@@ -1,5 +1,6 @@
-from methods import diagonala, winner, col_matrix
+from methods import diagonala, winner, col_matrix, drawdashrow, draw_game, str_game
 from random import randint
+
 
 game = [[0, 0, 0],
         [0, 0, 0],
@@ -7,10 +8,12 @@ game = [[0, 0, 0],
 
 
 player_start = randint(1,2)
-print(f"Incepe jucatorul numarl {player_start}")
 
 win = 0
 while win == 0:
+
+    player_start = player_start%2 + 1
+    print(f"Urmeaza jucatorul {player_start}")
 
     r = int(input("Introdu randul: "))
     c = int(input("Introdu coloana: "))
@@ -22,8 +25,8 @@ while win == 0:
     for row in game: 
         win = winner(row)
         if win > 0:
-                print(f"Winner {win} on row {row}")
-                break
+            print(f"Winner {win} on row {row}")
+            break
 
     """
     Verific winner pe diagonala
@@ -47,12 +50,14 @@ while win == 0:
         cc = col_matrix(game, i)
         win = winner(cc)
         if win > 0:
-                print(f"Winner {win} on column {i}")
-                break
+            print(f"Winner {win} on column {i}")
+            break
 
-    print(game)
-    player_start = player_start%2 + 1
-    print(f"Urmeaza jucatorul {player_start}")
+    # print(game)
+    game_string = str_game(game)
+
+    draw_game(game_string)
+
 
 
 

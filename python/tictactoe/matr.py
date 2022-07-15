@@ -1,9 +1,5 @@
-from random import randint, seed
 
-
-#seed(297597)
-
-def randmat(nr):
+def game_n(nr):
 
     m = []
     
@@ -11,14 +7,14 @@ def randmat(nr):
         m.append([])
     for row in m:
         for x in range(nr):
-            rnr = randint(0,10)
+            rnr = 0
             row.append(rnr)
         # print(row)
     return m
 
 
-matric1 = randmat(40)
-print(matric1)
+joc = game_n(5)
+print(joc)
 
 #[[2,2,2],[2,2,2],[2,2,2]]
 

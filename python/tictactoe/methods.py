@@ -59,3 +59,54 @@ def diagonala(game,x):
 
 
 # print(diagonala2(game))
+
+
+def drawdashrow(myrow):
+    print(" --- --- --- ")
+    print("| "+ str(myrow[0]) + " | "+ str(myrow[1]) + " | "+ str(myrow[2]) + " |")
+
+
+#r = [1, 2 , 3, 4]
+# drawdash(numar)
+#drawdashrow(r)
+
+def draw_game(joc):
+    for row in joc:
+        drawdashrow(row)
+    print(" --- --- --- ")
+    return None
+
+
+def game_n(nr):
+
+    m = []
+    
+    for i in range(nr):
+        m.append([])
+    for row in m:
+        for x in range(nr):
+            rnr = ""
+            row.append(rnr)
+        # print(row)
+    return m
+
+def str_game(joc):
+
+    dim_joc= len(joc[0])
+    em_joc = game_n(dim_joc)
+
+    for i in range(len(joc)):
+        for j in range(len(joc[i])):
+            if joc[i][j] == 0:
+                em_joc[i][j] = " "
+            elif joc[i][j] == 1:
+                 em_joc[i][j] = "X"
+            elif joc[i][j] == 2:
+                 em_joc[i][j] = "O"
+            else:
+                continue
+
+    return em_joc
+
+
+
