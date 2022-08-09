@@ -6,17 +6,20 @@ game = [[0, 0, 0],
         [0, 0, 0],
         [0, 0, 0],]
 
+coordonate = {1:(0,0), 2:(0,1), 3:(0,2), 4:(1,0), 5:(1,1), 6:(1,2), 7:(2,0), 8:(2,1), 9:(2,2)}
 
 player_start = randint(1,2)
 
 win = 0
+
 while win == 0:
 
     player_start = player_start%2 + 1
     print(f"Urmeaza jucatorul {player_start}")
 
-    r = int(input("Introdu randul: "))
-    c = int(input("Introdu coloana: "))
+    cell = int(input("Introdu celula: "))
+    r = coordonate[cell][0]
+    c = coordonate[cell][1]
     game[r][c] = player_start
 
     """
