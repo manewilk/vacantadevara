@@ -153,9 +153,7 @@ dmypy.json
 *.lai
 *.la
 *.a
-*.lib
-
+*.libwdwddada
 # Executables
 *.exe
-*.out
-*.app
+*.out 
